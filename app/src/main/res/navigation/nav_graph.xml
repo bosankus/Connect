@@ -9,5 +9,26 @@
         android:id="@+id/loginFragment"
         android:name="com.bosankus.stream.connect.ui.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_channelFragment"
+            app:destination="@id/channelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/channelFragment"
+        tools:layout="@layout/fragment_channel"
+        android:name="com.bosankus.stream.connect.ui.channel.ChannelFragment"
+        android:label="ChannelFragment" >
+        <action
+            android:id="@+id/action_channelFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        tools:layout="@layout/fragment_chat"
+        android:name="com.bosankus.stream.connect.ui.chat.ChatFragment"
+        android:label="ChatFragment" >
+        <argument android:name="channelId"
+            app:argType="string" />
+    </fragment>
 </navigation>
